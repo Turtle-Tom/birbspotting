@@ -1,0 +1,16 @@
+
+<h1>Winter Birbs</h1>
+{{#each winter_birb}}
+    <div class="birb_box_winter">
+        <h3>{{this.name}}</h3>
+        <p>Spotted <b>{{this.spottings}}</b> time(s)!</p>
+        <p>Color: <b>{{this.color}}</b></p>
+        <p>Estimated Size (inches): <b>{{this.size}}"</b></p>
+        <p>Characteristics:</p>
+        <ul>
+            {{#each this.characteristics}}
+                <li class="character"><b>{{this}}</b></li>
+            {{/each}}
+        </ul>
+    </div>
+{{/each}}

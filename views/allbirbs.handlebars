@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>All Recorded Spottings</h1>
+
+        <div class="input-field">
+            <label>Search Birbs:</label>
+            <input type="text" id="searchBirb" onkeyup="search()">
+        </div>
+
+        <p id="res"></p>
+
+        <div id="birbDisplay" class="nerd">
+            {{#each birb}}
+                <div class="birb_box">
+                    <h3 class="elem">{{this.name}}</h3>
+                    <p class="elem">Spotted in <b>{{this.state}}</b> during <b>{{this.season}}</b></p>
+                    <p class="elem">Color: <b>{{this.color}}</b></p>
+                    <p class="elem">Estimated Size (inches): <b>{{this.size}}"</b></p>
+                    <p class="elem">Characteristics:</p>
+                    <ul>
+                        {{#each this.characteristics}}
+                            <li class="character"><b>{{this}}</b></li>
+                        {{/each}}
+                    </ul>
+                    <p class="elem">Spotter: <b>{{this.spotter}}</b></p>
+                </div>
+            {{/each}}
+        </div>
+
+<script>
+function search() {
+    var input = document.getElementById("searchBirb").value;
+    var boxes = document.getElementById("birbDisplay");
+    var birbs = document.getElementsByClassName("birb_box");
+    var numFalse = 0;
+
+    for (i in birbs) {
+        var contains = false;
+
+        if (birbs != null && birbs[i] != null && birbs[i].className != null && birbs[i].className == "birb_box") {
+            var elem = birbs[i].getElementsByClassName('elem');
+            var li = birbs[i].getElementsByClassName('character');
+
+            for (j in elem) {
+                if (elem[j].innerText != null && !contains) {
+                    if (elem[j].innerText.toLowerCase().includes(input.toLowerCase())) {
+                        contains = true;
+                        break;
+                    }
+                }
+            }
+            for (j in li) {
+                if (li[j].innerText != null && !contains) {
+                    if (li[j].innerText.toLowerCase().includes(input.toLowerCase())) {
+                        contains = true;
+                        break;
+                    }
+                }
+            }
+
+            if (contains) {
+                birbs[i].style["display"] = "";
+            } else {
+                birbs[i].style["display"] = "none";
+                numFalse += 1;
+            }
+        }
+    }
+
+    if (numFalse == birbs.length) {
+        document.getElementById("res").innerHTML = "No birbs :(";
+    } else {
+        document.getElementById("res").innerHTML = "";
+    }
+}
+</script>
+    </body>
+</html>

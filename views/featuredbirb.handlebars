@@ -1,0 +1,13 @@
+
+<h1>Featured Spotting</h1>
+<h3>{{featured_birb.name}}</h3>
+<p>Spotted in <b>{{featured_birb.state}}</b> during <b>{{featured_birb.season}}</b></p>
+<p>Color: <b>{{featured_birb.color}}</b></p>
+<p>Estimated Size (inches): <b>{{featured_birb.size}}"</b></p>
+<p>Characteristics:</p>
+<ul>
+    {{#each featured_birb.characteristics}}
+        <li class="character"><b>{{this}}</b></li>
+    {{/each}}
+</ul>
+<p>Spotter: <b>{{featured_birb.spotter}}</b></p>

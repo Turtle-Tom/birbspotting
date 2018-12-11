@@ -1,0 +1,27 @@
+{
+    "objects":[{
+            "name": "Bluebird",
+            "state": "Maryland",
+            "color": "blue",
+            "spotter": "Thomas Marlowe",
+            "season": "spring",
+            "size": "7",
+            "characteristics": ["smol", "cute"]
+        }, {
+            "name": "Mockingbird",
+            "state": "Maryland",
+            "color": "grey",
+            "spotter": "Laura Marlowe",
+            "season": "winter",
+            "size": "11",
+            "characteristics": ["grump", "hungry"]
+        }, {
+            "name": "Mockingbird",
+            "state": "Maryland",
+            "color": "grey",
+            "spotter": "Thomas Marlowe",
+            "season": "winter",
+            "size": "9",
+            "characteristics": ["curious", "photogenic"]
+        }]
+}

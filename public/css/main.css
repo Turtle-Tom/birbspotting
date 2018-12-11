@@ -1,0 +1,75 @@
+/* Please add your own! */
+
+/* Please add your own! */
+
+#nav {
+    display: block;
+}
+
+#nav li {
+    display: inline;
+    padding-left: 1%;
+    padding-bottom: 2%;
+    overflow: hidden;
+    list-style-type: none;
+}
+
+.birb_box {
+    border-style: solid;
+    border-width: 2px;
+    border-color: grey;
+    min-width: 20%;
+    display: inline-block;
+    margin: 2%;
+    padding: 1%;
+}
+
+.birb_box_winter {
+    border-style: solid;
+    border-width: 2px;
+    border-color: grey;
+    min-width: 15%;
+    display: inline-block;
+    margin: 2%;
+    padding: 1%;
+}
+
+.character {
+    display: inline;
+    list-style-type: none;
+    border-style: solid;
+    border-width: 1px;
+    border-color: lightgrey;
+    margin: 2px;
+    padding: 2px;
+}
+
+#birbDisplay {
+    display: inline;
+}
+
+article {
+    padding: 1%;
+}
+
+.input-field {
+    padding: 1%;
+}
+
+label {
+    display: block;
+    padding-right: 1%;
+}
+
+input {
+    font-size: 16px;
+}
+
+button {
+	padding: 1px;
+    border-radius: 10px;
+	background-color: lightblue;
+    color: blue;
+	font-size: 24px;
+	font-weight: bold;
+}

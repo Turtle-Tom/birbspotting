@@ -1,0 +1,13 @@
+
+<h1>Most Popular Birb</h1>
+<h3>{{popular_birb.name}}</h3>
+<p>Spotted in <b>{{popular_birb.state}}</b> during <b>{{popular_birb.season}}</b></p>
+<p>Spotted <b>{{popular_birb.spottings}}</b> time(s)!</p>
+<p>Color: <b>{{popular_birb.color}}</b></p>
+<p>Estimated Size (inches): <b>{{popular_birb.size}}"</b></p>
+<p>Characteristics:</p>
+<ul>
+    {{#each popular_birb.characteristics}}
+            <li class="character"><b>{{this}}</b></li>
+    {{/each}}
+</ul>
