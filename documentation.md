@@ -1,15 +1,15 @@
 
-# PROJECT NAME
+# Birb Spotting
 
 ---
 
-Name: 
+Name: Thomas Garbe O'Connor
 
-Date: 
+Date: 11/8/2018
 
-Project Topic: 
+Project Topic: Organize data on birb spottings
 
-URL: 
+URL: https://birbspotting.herokuapp.com/
 
 ---
 
@@ -17,38 +17,85 @@ URL:
 ### 1. Data Format and Storage
 
 Data point fields:
-- `Field 1`:     ...       `Type: ...`
-- `Field 2`:     ...       `Type: ...`
-- `Field 3`:     ...       `Type: ...`
-- `Field 4`:     ...       `Type: ...`
-- `Field 5`:     ...       `Type: ...`
+- `Field 1`: name               `Type: String`
+- `Field 2`: state              `Type: String`
+- `Field 3`: color              `Type: String`
+- `Field 4`: spotter            `Type: String`
+- `Field 5`: season             `Type: String`
+- `Field 6`: size               `Type: Number`
+- `Field 7`: characteristics    `Type: Array`
 
-Schema: 
+Schema:
 ```javascript
 {
-   ...
+    var birbSchema = new mongoose.Schema({
+        name:{
+            type: String,
+            required: true
+        },
+
+        state:{
+            type: String,
+            required: true
+        },
+
+        color:{
+            type: String,
+            required: true
+        },
+
+        spotter:{
+            type: String,
+            required: true
+        },
+
+        season:{
+            type: String,
+            required: true
+        },
+
+        size:{
+            type: Number,
+            required: true
+        },
+
+        characteristics:{
+            type: Array,
+            required: true
+        }
+    });
+
+    var Birb = mongoose.model('Birb', birbSchema);
+
+    module.exports = Birb;
 }
 ```
 
 ### 2. Add New Data
 
-HTML form route: `/...`
+HTML form route: `/add`
 
-POST endpoint route: `/api/...`
+POST endpoint route: `/api/add/`
 
-Example Node.js POST request to endpoint: 
+Example Node.js POST request to endpoint:
 ```javascript
 var request = require("request");
 
-var options = { 
+var options = {
     method: 'POST',
-    url: 'http://localhost:3000/api/...',
-    headers: { 
-        'content-type': 'application/x-www-form-urlencoded' 
+    url: 'http://localhost:3000/api/add',
+    headers: {
+        'content-type': 'application/x-www-form-urlencoded'
     },
-    form: { 
-       ...
-    } 
+    form: {
+        "name": "Bluejay",
+        "state": "Maryland",
+        "color": "blue",
+        "spotter": "Thomas Marlowe",
+        "season": "fall",
+        "size": "10",
+        "characteristics": ["aggressive", "playful"]
+    }
 };
 
 request(options, function (error, response, body) {
@@ -60,18 +107,17 @@ request(options, function (error, response, body) {
 
 ### 3. View Data
 
-GET endpoint route: `/api/...`
+GET endpoint route: `/api/`
 
 ### 4. Search Data
 
-Search Field: ...
+Search Field: birb name, spotter, state, season, color, size, characteristics
 
 ### 5. Navigation Pages
 
 Navigation Filters
-1. name -> `  route  `
-2. ... -> `  ...  `
-3. ... -> `  ...  `
-4. ... -> `  ...  `
-5. ... -> `  ...  `
-
+1. Home ->          `/`
+2. Add Birb ->      `/add`
+3. Winter Birbs ->  `/winter`
+4. Most Popular ->  `/popular`
+5. Featured ->      `/featured`

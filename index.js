@@ -83,7 +83,7 @@ function getRndInteger(min, max) {
      res.render('addbirb', {});
  });
 
- app.post('/add/:birb', function(req, res) {
+ app.post('/api/add', function(req, res) {
      var birb = new Birb({
          name: req.body.name,
          state: req.body.state,
@@ -169,11 +169,6 @@ function getRndInteger(min, max) {
         if (err) throw err;
         res.json(_DATA);
     });
- });
-
- app.get('/api/add', function(req, res) {
-
-     res.json({});
  });
 
  app.get('/api/winter', function(req, res) {
