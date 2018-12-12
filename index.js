@@ -72,7 +72,7 @@ function getRndInteger(min, max) {
 //     });
 // });
 
- app.get('/', function(req, res) {
+ app.get('/home', function(req, res) {
      Birb.find({}, function(err, _DATA){
         if (err) throw err;
         res.render('allbirbs', {birb: _DATA});
@@ -96,7 +96,7 @@ function getRndInteger(min, max) {
 
      birb.save(function(err) {
          if (err) throw err;
-         return res.redirect('/');
+         return res.redirect('/home');
      })
  });
 
@@ -164,7 +164,7 @@ function getRndInteger(min, max) {
 
  // APIs
 
- app.get('/api/', function(req, res) {
+ app.get('/api/home', function(req, res) {
      Birb.find({}, function(err, _DATA){
         if (err) throw err;
         res.json(_DATA);
