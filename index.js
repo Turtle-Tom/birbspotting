@@ -14,7 +14,7 @@ dotenv.load();
 console.log(process.env.MONGODB);
 
 // Connect to Sandbox MongoDB
-mongoose.connect(process.env.MONGODB);
+mongoose.connect("mongodb://Thomas:Mongo11CSFlie13@ds151863.mlab.com:51863/birbs");
 mongoose.connection.on('error',function(err){
     console.log("Connection was unable to take place");
     process.exit(1);
